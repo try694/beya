@@ -1,14 +1,12 @@
 "use client";
 
-import React, { useActionState, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { FiMail, FiLock, FiEye, FiEyeOff } from "react-icons/fi";
 
-const initialState = { error: "", ok: false };
 
 export default function LoginClient() {
   const [showPassword, setShowPassword] = useState(false);
-  const [state, formAction] = useActionState(login, initialState);
 
   return (
     <div className="min-h-screen bg-neutral-900 text-white flex items-center justify-center px-4">
@@ -17,7 +15,7 @@ export default function LoginClient() {
           <img src="/logo.png" alt="Logo" width="80" height="60" />
           <h1 className="relative text-xl font-semibold ml-4">Login</h1>
         </div>
-        <form action={formAction} className="space-y-5">
+        <form className="space-y-5">
           <div>
             <label className="block mb-1 text-sm" htmlFor="email">
               Email
@@ -57,9 +55,7 @@ export default function LoginClient() {
               </button>
             </div>
           </div>
-          {state?.error && (
-            <p className="text-red-500 mt-2 text-center">{state.error}</p>
-          )}
+         
           <button
             type="submit"
             className="w-full bg-yellow-400 text-black font-semibold rounded py-2 hover:bg-yellow-300 transition"
@@ -79,7 +75,3 @@ export default function LoginClient() {
     </div>
   );
 }
-function login(state: { error: string; ok: boolean; }): { error: string; ok: boolean; } | Promise<{ error: string; ok: boolean; }> {
-  throw new Error("Function not implemented.");
-}
-

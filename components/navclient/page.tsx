@@ -1,14 +1,10 @@
 "use client";
 
-import { getSession } from "@/app/api/auths/getSession";
-import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
 import { FiHome, FiBarChart2, FiUser, FiSettings } from "react-icons/fi";
 
 export default async function Sidebar() {
-  const session = await getSession();
-  const user = session?.user;
-  const isAdmin = user?.role === 'admin';
+
 
   return (
     <div className="w-64 bg-neutral-800 p-4">
@@ -26,9 +22,8 @@ export default async function Sidebar() {
               <span className="text-sm font-medium">Overview</span>
             </Link>
           </li>
-          {/* Admin-only links */}
-          {isAdmin && (
-            <>
+         
+            
               <li>
                 <Link href="/dashboard/usermanagement" className="flex items-center gap-2 text-white px-3 py-2 rounded hover:bg-neutral-700 transition">
                   <FiBarChart2 size={20} />
@@ -41,9 +36,8 @@ export default async function Sidebar() {
                   <span className="text-sm font-medium">Waiting List</span>
                 </Link>
               </li>
-            </>
-          )}
-          {/* Links for both admin and regular users */}
+            
+          
           <li>
             <Link href="/dashboard/v2trades" className="flex items-center gap-2 text-white px-3 py-2 rounded hover:bg-neutral-700 transition">
               <FiUser size={20} />
@@ -82,7 +76,7 @@ export default async function Sidebar() {
           </li>
           {/* Logout Button */}
           <li>
-            <button onClick={() => signOut()} className="flex items-center gap-2 w-full text-white px-3 py-2 rounded hover:bg-neutral-700 transition">
+            <button className="flex items-center gap-2 w-full text-white px-3 py-2 rounded hover:bg-neutral-700 transition">
               <FiSettings size={20} />
               <span className="text-sm font-medium">Logout</span>
             </button>
