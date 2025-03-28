@@ -1,0 +1,157 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Fredoka:wght@300..700&family=Luckiest+Guy&display=swap');
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*layers*/
+
+.bg-blue-gradient {
+  background: linear-gradient(
+    300.81deg,
+    #041342 29.82%,
+    #122077 51.94%,
+    #040140 90.29%
+  );
+}
+.hidden1 {
+  display: none;
+}
+
+.block1 {
+  display: block;
+}
+.bg-boss-gradient {
+  background: linear-gradient(
+    300.81deg,
+    #0b246f 29.82%,
+    #292e82 41.94%,
+    #353075 51.94%,
+    #302e6c 90.29%
+  );
+}
+.bg-dark-gradient {
+  background: radial-gradient(
+    circle at center,
+    #02034c,      /* Dark blue */
+    #000000 60%,  /* Dark red/purple mix */
+    #02034c 100%      /* Dark blue */
+  );
+}
+
+
+
+.dark-gradient {
+  background: linear-gradient(
+    300.81deg,
+    #010513 29.82%,
+    #292771 100%
+  );
+};
+
+
+.sidebar {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: -100% 0%;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #f9dec4, #8992e3,#d5b080, #ffddaf);
+  background-size: 200% 200%;
+  color: transparent;
+  background-clip: text;
+  animation: gradientAnimation 4s linear infinite;
+}
+
+.animate-gradient {
+  animation: gradientAnimation 5s linear infinite;
+}
+
+.text-gradient0 {
+  background: linear-gradient(90deg, #b5bde3, #f17678, #9faadc, #d4a0a1);
+  background-size: 200% 200%;
+  color: transparent;
+  background-clip: text;
+  animation: gradientAnimation 8s linear infinite;
+}
+
+.animate-gradient {
+  animation: gradientAnimation 5s linear infinite;
+}
+
+/* fonts */
+.coiny {
+  font-family: "Coiny", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lucky {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fredoka {
+  font-family: "Fredoka", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
